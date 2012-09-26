@@ -1047,7 +1047,7 @@ static int tegra_cpu_init(struct cpufreq_policy *policy)
 	{
 		cpu_emc_cur_rate = clk_get_rate(emc_clk);
 		emc_cur_rate = clk_get_rate(c);
-		printk(" %s : emc_clk->min_rate to 204M\n", __func__);
+		//printk(" %s : emc_clk->min_rate to 204M\n", __func__);
 		emc_clk->min_rate=EMC_MINMIAM_RATE;
 		c->min_rate=EMC_MINMIAM_RATE;
 

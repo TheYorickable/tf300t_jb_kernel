@@ -307,8 +307,8 @@ void tick_nohz_stop_sched_tick(int inidle)
 		static int ratelimit;
 
 		if (ratelimit < 10) {
-			printk(KERN_ERR "NOHZ: local_softirq_pending %02x\n",
-			       (unsigned int) local_softirq_pending());
+			//printk(KERN_ERR "NOHZ: local_softirq_pending %02x\n",
+			//       (unsigned int) local_softirq_pending());
 			ratelimit++;
 		}
 		goto end;
@@ -641,7 +641,7 @@ static void tick_nohz_switch_to_nohz(void)
 	}
 	local_irq_enable();
 
-	printk(KERN_INFO "Switched to NOHz mode on CPU #%d\n", smp_processor_id());
+	//printk(KERN_INFO "Switched to NOHz mode on CPU #%d\n", smp_processor_id());
 }
 
 /*
@@ -795,7 +795,7 @@ void tick_setup_sched_timer(void)
 #ifdef CONFIG_NO_HZ
 	if (tick_nohz_enabled) {
 		ts->nohz_mode = NOHZ_MODE_HIGHRES;
-		printk(KERN_INFO "Switched to NOHz mode on CPU #%d\n", smp_processor_id());
+		//printk(KERN_INFO "Switched to NOHz mode on CPU #%d\n", smp_processor_id());
 	}
 #endif
 }
